@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المركز الدولي للمحاماة والتحكيم والتدريب</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Cairo', sans-serif;
+            background: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            color: #001f3f;
+        }
+
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: #bb364c;
+            position: absolute;
+            bottom: -15px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        .btn-gold {
+            background-color: #bb364c;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn-gold:hover {
+            background-color: #bb364c;
+            color: rgb(0, 0, 0);
+            transform: translateY(-3px);
+        }#loader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #001f3f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: #ffffff;
+            font-size: 30px;
+        }
+
+        .navbar {
+            background: #001f3f;
+            border-bottom: 3px solid #bb364c;
+            transition: .4s;
+            z-index: 1001;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+
+        .nav-logo {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110px;
+            height: 110px;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+            z-index: 1002;
+            border: 6px solid #001f3f;
+        }
+
+        @media (max-width: 768px) {
+            
+            .nav-logo {
+                width: 80px;
+                height: 80px;
+                border-width: 4px;
+                font-size: 28px;
+            }
+        }
+
+        .nav-logo img {
+            width: 80%;
+            height: auto;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: 0.3s; 
+        }
+
+        .nav-link:hover {
+            color: #bb364c !important; 
+        }
+
+        /* Hero */
+        .hero-slide {
+            min-height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            
+            .hero-slide {
+                width: 100%;
+                height: 100%;
+                border-width: 2px;
+                padding: 20px;
+                align-items: right;
+                text-align: right;
+            }
+        }
+
+        .hero-slide .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.17);
+            top: 0;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            
+            .hero-slide .overlay {
+                width: 100%;
+                height: 100%;
+                border-width: 2px;
+                font-size: 14px;
+            }
+        }
+
+        .hero-slide .content {
+            position: relative;
+            z-index: 2;
+            padding: 0 15px; 
+        }
+
+        .content-banner {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+            padding: 100px 0;
+            border-bottom: 2px solid #bb364c;
+        }
+        
+
+        .banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(93, 25, 26, 0.95) 0%, rgba(0, 63, 25, 0.7) 40%, transparent 100%);
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .banner-overlay {
+                background: rgba(0, 63, 14, 0.8);
+            }
+            .content-banner {
+                padding: 60px 0;
+                text-align: right;
+                font-size: 14px;
+            }
+        }
+        /*Activities Banner Style */
+        .content-banner {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+            padding: 100px 0;
+            border-bottom: 2px solid #bb364c;
+        }
+        @media (max-width: 768px) {
+            
+            .content-banner {
+                width: 100%;
+                height: 100%;
+                border-width: 2px;
+                padding: 15px;
+                align-items: right;
+                text-align: right;
+                font-size: 10%;
+                border-bottom: 1px solid #bb364c;
+            }
+        }
+
+        .banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(93, 25, 26, 0.95) 0%, rgba(0, 31, 63, 0.7) 40%, transparent 100%);
+            z-index: 2;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 3;
+            max-width: 700px;
+        }
+          @media (max-width: 768px) {
+            
+            .banner-content {
+                width: 100%;
+                height: 100%;
+                border-width: 2px;
+                z-index: 2;
+                padding: 15px;
+                align-items: right;
+                text-align: right;
+                font-size: 4px;
+            }
+        }
+
+        .principles-section {
+            background: #001021;
+            padding: 80px 0;
+            color: white;
+        }
+
+            .principles-section .section-title {
+                color: white;
+            }
+
+        .principle-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 40px 25px;
+            border-radius: 15px;
+            height: 100%;
+            transition: 0.4s;
+            text-align: center;
+        }
+
+            .principle-item:hover {
+                background: rgba(197, 160, 89, 0.05);
+                border-color: #bb364c;
+                transform: translateY(-10px);
+            }
+
+        .principle-icon {
+            font-size: 35px;
+            color: #bb364c;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 5px solid transparent;
+            height: 100%;
+        }
+
+            .team-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+                border-bottom: 5px solid #bb364c;
+            }
+
+        .team-img-container {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .smart-portal {
+            background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 0;
+        }
+
+        .portal-card {
+            background: white;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .portal-header {
+            background: #001f3f;
+            color: #fffafb;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .portal-body {
+            padding: 40px;
+        }
+
+        .portal-input {
+            border: 2px solid #350c0c;
+            padding: 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+            .portal-input:focus {
+                border-color: #bb364c;
+                box-shadow: 0 0 10px rgba(187, 54, 76, 0.1);
+            }
+
+        .result-box {
+            background: #fdfaf3;
+            border: 1px solid #bb364c;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            position: relative;
+        }
+
+            .result-box:before {
+                content: '\f3ed';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                position: absolute;
+                left: 20px;
+                top: 20px;
+                font-size: 40px;
+                color: rgba(187, 54, 76, 0.1);
+            }
+
+        /* Footer & WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: #141414;
+            color: rgb(255, 255, 255);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-logo {
+                width: 80px;
+                height: 80px;
+            }
+
+            .hero-slide h1 {
+                font-size: 2rem;
+            }
+
+            .content-banner {
+                text-align: center;
+                min-height: 400px;
+            }
+        }
+.goals-section {
+    background: #fdfdfd;
+    padding: 100px 0;
+}
+
+.goal-card {
+    background: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 45px 30px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 35px rgba(247, 245, 245, 0.05); /* ظل خفيف جداً كحلي */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.goal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #bb364c;
+    transform: scaleX(0);
+    transition: 0.4s;}
+
+.goal-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(187, 54, 76, 0.15);}
+
+.goal-card:hover::before {
+    transform: scaleX(1);}
+
+.goal-icon-box {
+    width: 80px;
+    height: 80px;
+    background: rgba(197, 160, 89, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: 0.4s;}
+
+.goal-card:hover .goal-icon-box {
+    background: #bb364c;}
+
+.goal-icon-box i {
+    font-size: 32px;
+    color: #bb364c;
+    transition: 0.4s;}
+
+.goal-card:hover .goal-icon-box i {
+    color: #ffffff;
+    transform: rotateY(360deg);}
+
+.goal-card h5 {
+    color: #1c0202;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.6;}
+
+@keyframes autoZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }}
+
+.hero-slide {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden; }
+
+.carousel-item.active .hero-slide {
+    animation: autoZoom 10s ease-in-out infinite alternate;
+
+    @media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+    .sidebar {
+        display: none;}
+}html, body {
+    overflow-x: hidden;
+    width: 100%;}
+img {
+    max-width: 100%;
+    height: auto;
+}
+}
+    </style>
+</head>
+<body>
+
+    <div id="loader">⚖ جاري التحميل...</div>
+
+    <a href="https://wa.me/201142717526" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container position-relative">
+            <a class="navbar-brand text-white fw-bold">⚖ المركز الدولي للمحاماة والتحكيم والتدريب</a>
+            <div class="nav-logo"><img src="LOGO.PNG" alt="logo"></div>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#practice">مجالات العمل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#track">تتبع قضيتك</a></li>
+                     <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero p-0">
+        <div id="heroSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-slide" style="background-image: url('banner.webp');">
+                        <div class="overlay"></div>
+                        <div class="content" data-aos="fade-up">
+                            <h1 class="display-4 fw-bold">الخبرة القانونية تبدأ من هنا</h1>
+                            <p class="lead mt-3">خدمات قانونية وتحكيمية وفق أعلى المعايير المهنية</p>
+                            <a href="#contact" class="btn btn-gold mt-4">احجز استشارة الآن</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="practice">
+        <div class="content-banner">
+            <img src="https://www.faith-matters.org/wp-content/uploads/2021/04/shutterstock_247937008-scaled.jpg" class="banner-bg" alt="bg">
+            <div class="banner-overlay"></div>
+            <div class="container">
+                <div class="banner-content" data-aos="fade-right">
+                    <h2 class="section-title-light">أولاً: أعمال المحاماة والاستشارات القانونية</h2>
+                    <ul class="list-unstyled mt-4 lead">
+                        <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> الترافع والحضور أمام المحاكم وهيئات التحكيم على اختلاف درجاتها وأنواعها.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> تقديم الاستشارات القانونية للأفراد والشركات والمؤسسات.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> إعداد وصياغة ومراجعة العقود والاتفاقيات وكافة المحررات القانونية.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> تأسيس الشركات بكافة أنواعها وإعداد هياكلها القانونية.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> تمثيل العملاء في المنازعات المدنية والجنائية والإدارية وغيرها.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> تقديم خدمات الامتثال والحوكمة وإدارة المخاطر.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> تقديم خدمات الملكية الفكرية والعلامات التجارية.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="content-banner">
+
+        <img src="https://collegecliffs.com/wp-content/uploads/2023/03/Best-Legal-Secretarial-Training-Programs-Online-featured-image.jpg" class="banner-bg" alt="bg">
+
+        <div class="banner-overlay" style="background: linear-gradient(to right, rgba(0, 31, 63, 0.95) 0%, rgba(0, 31, 63, 0.7) 40%, transparent 100%);"></div>
+
+        <div class="container text-end">
+
+            <div class="banner-content ms-auto" data-aos="fade-left">
+
+                <h2 class="section-title-light"> ثـانيــاً: أعـمـــال التـحـكيــم و تسـويــة المنـازعـــات<span></span>&nbsp;&nbsp;&nbsp;&nbsp;<span></span><span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span></h2>
+
+               <ul class="list-unstyled mt-4 lead">
+
+                    <li class="d-flex align-items-start mb-2"><i class="fas fa-graduation-cap text-warning me-3 mt-1"></i> تمثيل الأطراف في إجراءات التحكيم المحلي والدولي.</li>
+
+                    <li class="d-flex align-items-start mb-2"><i class="fas fa-shield-alt text-warning me-3 mt-1"></i> القيام بأعمال المحكم أو الوسيط أو الموفق وفقًا للقوانين واللوائح المنظمة لذلك.</li>
+
+                    <li class="d-flex align-items-start mb-2"><i class="fas fa-file-contract text-warning me-3 mt-1"></i> إعداد وصياغة شروط ومشارطات التحكيم.</li>
+
+                    <li class="d-flex align-items-start mb-2"><i class="fas fa-file-contract text-warning me-3 mt-1"></i> إدارة وتسوية المنازعات بالوسائل البديلة لتسوية المنازعات (ADR).</li>
+
+                    <li class="d-flex align-items-start mb-2"><i class="fas fa-file-contract text-warning me-3 mt-1"></i> متابعة إجراءات تنفيذ أحكام التحكيم والطعن عليها وفقًا للقانون.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="content-banner">
+        <img src="https://thehill.com/wp-content/uploads/sites/2/2023/10/patent_getty.jpg?w=1280.jpg" class="banner-bg" alt="bg">
+        <div class="banner-overlay"></div>
+        <div class="container">
+            <div class="banner-content" data-aos="fade-left">
+                <h2 class="section-title-light">ثالثاً: التدريب والتأهيل القانوني</h2>
+                <ul class="list-unstyled">
+               <ul class="list-unstyled mt-4 lead">
+                    <li><i class="fas fa-trademark text-warning me-2"></i> تنظيم وعقد الدورات والبرامج التدريبية وورش العمل في المجالات القانونية.</li>
+                    <li><i class="fas fa-users-cog text-warning me-2"></i> إعداد برامج متخصصة في التحكيم التجاري الدولي وتسوية المنازعات.</li>
+                    <li><i class="fas fa-user-shield text-warning me-2"></i> تقديم برامج تدريب مهني وتأهيل قانوني للمحامين والمستشارين القانونيين.</li>
+                    <li><i class="fas fa-user-shield text-warning me-2"></i> إعداد برامج تأهيلية لحديثي التخرج الراغبين في العمل بالمجالات القانونية والدبلوماسية.</li>
+                    <li><i class="fas fa-user-shield text-warning me-2"></i> التعاون مع الجهات الأكاديمية والمهنية لعقد برامج مشتركة في نطاق أغراض المركز.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+<section id="goals" class="goals-section">
+    <div class="container text-center">
+        <h2 class="section-title" data-aos="fade-up">الأهداف المؤسسية</h2>
+        <p class="text-muted mb-5" data-aos="fade-up" data-aos-delay="100">رؤيتنا واضحة.. نهدف لبناء منظومة قانونية متكاملة تحقق العدالة والريادة</p>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="goal-card">
+                    <div class="goal-icon-box">
+                        <i class="fas fa-scale-balanced"></i>
+                    </div>
+                    <h5>تقديم خدمات محاماة واستشارات قانونية عالية الجودة.</h5>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="goal-card">
+                    <div class="goal-icon-box">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h5>دعم وتسوية المنازعات بالوسائل البديلة وفق أفضل الممارسات.</h5>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="goal-card">
+                    <div class="goal-icon-box">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h5>تأهيل الكوادر القانونية والمهنية ببرامج تدريب متخصصة.</h5>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="goal-card">
+                    <div class="goal-icon-box">
+                        <i class="fas fa-building-shield"></i>
+                    </div>
+                    <h5>تقديم خدمات الحوكمة والامتثال وإدارة المخاطر للشركات.</h5>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="goal-card">
+                    <div class="goal-icon-box">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h5>بناء شراكات مهنية وأكاديمية محلية ودولية.</h5>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="goal-card">
+                    <div class="goal-icon-box">
+                        <i class="fas fa-book-open-reader"></i>
+                    </div>
+                    <h5>الإسهام في نشر الثقافة القانونية وتعزيز الوعي المؤسسي.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="principles-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">المبادئ الحاكمة للمركز</h2>
+            <div class="row g-4 mt-4">
+                <div class="col-md-3" data-aos="zoom-in">
+                    <div class="principle-item">
+                        <i class="fas fa-balance-scale principle-icon"></i>
+                        <h5>سيادة القانون</h5>
+                        <p class="small text-light-50">الالتزام الكامل بالتشريعات المنظمة لمهنة المحاماة.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="principle-item">
+                        <i class="fas fa-shield-halved principle-icon"></i>
+                        <h5>النزاهة والشفافية</h5>
+                        <p class="small text-light-50">العمل وفق قواعد آداب المهنة ومعايير الصدق المطلق.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="principle-item">
+                        <i class="fas fa-user-secret principle-icon"></i>
+                        <h5>السرية التامة</h5>
+                        <p class="small text-light-50">الحفاظ الصارم على معلومات العملاء وبيانات قضاياهم.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="principle-item">
+                        <i class="fas fa-handshake-slash principle-icon"></i>
+                        <h5>تجنب التعارض</h5>
+                        <p class="small text-light-50">ضمان عدم تضارب المصالح وحماية حقوق موكلينا.</p>
+                    </div>
+                </div>
+            </div>
+        </div></section>
+    <section id="track" class="smart-portal">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">المكتب الذكي: تتبع حالة قضيتك</h2>
+                    <p class="text-muted">نظامنا الرقمي يتيح لك متابعة آخر مستجدات ملفاتك القانونية لحظة بلحظة</p>
+                </div>
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="portal-card">
+                        <div class="portal-header">
+                            <i class="fas fa-fingerprint mb-2" style="font-size: 2rem;"></i>
+                            <h4>بوابة تسجيل الدخول الآمن</h4>
+                        </div>
+                        <div class="portal-body">
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold"><i class="fas fa-id-card me-2 text-warning"></i> رقم البطاقة الشخصية</label>
+                                <input type="text" id="idNum" class="form-control portal-input" placeholder="أدخل الـ 14 رقم بالكامل">
+                            </div>
+                            
+                            <button onclick="trackCase()" id="searchBtn" class="btn btn-gold w-100 py-3 shadow">
+                                <span id="btnText"><i class="fas fa-search me-2"></i> استعلام عن الحالة</span>
+                                <!--Spinner -->
+                                <div id="searchLoader" class="spinner-border spinner-border-sm ms-2" role="status" style="display: none;">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+
+                            <div id="resultArea" class="result-box" style="display: none; margin-top: 20px;">
+                                <h5 id="clientName" class="fw-bold text-dark border-bottom pb-2 mb-3"></h5>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <small class="text-muted d-block">رقم القضية</small>
+                                        <span id="displayCaseNum" class="fw-bold text-dark"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">الحالة الحالية</small>
+                                        <span id="caseStatus" class="badge bg-primary p-2 mt-1 w-100"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">الجلسة القادمة</small>
+                                        <span id="nextSession" class="fw-bold text-danger"></span>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <div class="p-2 border-start border-3 border-warning bg-white rounded">
+                                            <small class="text-muted d-block">توجيهات المكتب:</small>
+                                            <span id="notes" class="small"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="errorMsg" class="alert alert-danger mt-3 text-center" style="display: none;">
+                                <i class="fas fa-exclamation-triangle me-2"></i> عذراً، لم نجد بيانات مطابقة.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-5" data-aos="fade-right">
+                    <h2 class="fw-bold">اتصل بنا</h2>
+                    <p>فريقنا مستعد للرد على كافة استشاراتكم القانونية على مدار الساعة.</p>
+                    <div class="mt-4">
+                        <p><i class="fas fa-phone text-gold me-2"></i> 01121495191 - 01120566448 - 01037328342 - 01142717526 - 0235706657</p>
+                        <p><i class="fas fa-envelope text-gold me-2"></i> internationalcenter26@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt text-gold me-2"></i> الجيزة - 6 شارع كلية الزراعة متفرع من شارع جامعة القاهرة</p>
+                    </div>
+                </div>
+                <div class="col-md-7" data-aos="fade-left">
+                    <div class="bg-white p-4 rounded text-dark">
+                        <form action="https://formsubmit.co/internationalcentericaat@gmail.com" method="POST">
+                            <input type="text" name="name" class="form-control mb-3" placeholder="الاسم الكامل" required>
+                            <input type="email" name="email" class="form-control mb-3" placeholder="البريد الإلكتروني" required>
+                            <textarea name="message" class="form-control mb-3" rows="4" placeholder="كيف يمكننا مساعدتك؟"></textarea>
+                            <button class="btn btn-gold w-100">إرسال الطلب</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.addEventListener("load", () => document.getElementById("loader").style.display = "none");
+
+        async function trackCase() {
+            const idNum = document.getElementById('idNum').value;
+            const scriptUrl = "https://script.google.com/macros/s/AKfycbweiOb4d8i8q-tydYZ9P5svpVy63-9f04cmAoXpGS4-kxOt53EGAj01SVVadF_2kEgrxA/exec";
+            
+            const loader = document.getElementById('searchLoader');
+            const resultArea = document.getElementById('resultArea');
+            const errorMsg = document.getElementById('errorMsg');
+            const searchBtn = document.getElementById('searchBtn');
+
+            if (!idNum) return alert("يرجى إدخال رقم البطاقة الشخصية");
+
+            loader.style.display = "inline-block";
+            searchBtn.disabled = true;
+            resultArea.style.display = "none";
+            errorMsg.style.display = "none";
+
+            try {
+                const response = await fetch(`${scriptUrl}?idNum=${encodeURIComponent(idNum)}`);
+                const data = await response.json();
+
+                if (data.status === "success") {
+                    resultArea.style.display = "block";
+                    errorMsg.style.display = "none";
+                    document.getElementById('clientName').innerText = "أهلاً بك، أ/ " + data.name;
+                    
+                    // عرض رقم القضية القادم من الشيت في خانة النتائج
+                    document.getElementById('displayCaseNum').innerText = data.caseNum || "غير متوفر";
+                    
+                    document.getElementById('caseStatus').innerText = data.caseStatus;
+
+                    if (data.nextSession && data.nextSession !== "غير محدد") {
+                        let dateObj = new Date(data.nextSession);
+                        document.getElementById('nextSession').innerText = dateObj.toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+                    } else {
+                        document.getElementById('nextSession').innerText = "غير محدد";
+                    }
+                    document.getElementById('notes').innerText = data.notes || "-";
+                } else {
+                    resultArea.style.display = "none";
+                    errorMsg.style.display = "block";
+                }
+            } catch (error) {
+                alert("حدث خطأ في الاتصال بالسيرفر");
+            } finally {
+                // إيقاف اللودنج
+                loader.style.display = "none";
+                searchBtn.disabled = false;
+            }
+        }
+    </script>
+    <footer>
+        <p class="mb-0">© 2026 جميع الحقوق محفوظة | المركز الدولي لأعمال المحاماة والتحكيم والتدريب</p>
+    </footer>
+
+</body>
+</html>

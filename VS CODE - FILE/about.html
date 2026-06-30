@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرؤية ومن نحن | المركز الدولي للمحاماة والتحكيم</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #ffffff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* المكونات العامة */
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            color: #001f3f;
+        }
+
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: #bb364c;
+            position: absolute;
+            bottom: -15px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #001f3f;
+            border-bottom: 3px solid #bb364c;
+            z-index: 1001;
+        }
+
+        .nav-logo {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110px;
+            height: 110px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+            z-index: 1002;
+            border: 6px solid #001f3f;
+        }
+
+        .nav-logo img {
+            width: 80%;
+            height: auto;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #bb364c !important;
+        }
+
+        /* Hero Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px;
+            color: white;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-bottom: 8px solid #bb364c;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        /* Team Cards (The Premium Style) */
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 5px solid transparent;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 5px solid #bb364c;
+        }
+
+        .team-img-container {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            background: #000814;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-logo { width: 80px; height: 80px; }
+            .page-header { padding: 120px 0 60px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container position-relative">
+            <a class="navbar-brand text-white fw-bold">⚖ المركز الدولي للمحاماة والتحكيم والتدريب</a>
+            <div class="nav-logo"><img src="logo.png" alt="logo"></div>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#practice">مجالات العمل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#track">تتبع قضيتك</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="about" class="py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 about-text" data-aos="fade-right">
+                    <h2 class="section-title text-start">من نحن</h2>
+                    <p>
+يُعد المركز الدولي لأعمال المحاماة والتحكيم والتدريب (ICAAT) كيانًا مهنيًا متخصصًا، يُباشر كافة أنشطته وأعماله في إطار أحكام القوانين واللوائح المنظمة لمزاولة مهنة المحاماة والأعمال القانونية، وذلك داخل جمهورية مصر العربية وخارجها، ويهدف إلى تقديم خدمات قانونية وتحكيمية وتدريبية متكاملة، وفقًا لأحكام التشريعات النافذة والمعايير المهنية المعتمدة.                    </p>
+                    <p>
+يُباشر المركز اختصاصاته من خلال هيكل إداري ومهني مُنظم، يضم نخبة من أساتذة القانون، والمحامين المقيدين بنقابة المحامين، والمستشارين القانونيين، والمحكمين، والخبراء المتخصصين، وذلك على نحو يكفل تقديم الخدمات القانونية والتحكيمية والتدريبية بأعلى درجات الكفاءة والمهنية، ووفقًا لأحكام القوانين الوطنية والاتفاقيات الدولية ذات الصلة.</p>
+                    <p>
+ويلتزم المركز بمراعاة مبادئ الشفافية والمصداقية في مباشرة أعماله، وعلى الأخص فيما يتعلق بعلاقته بعملائه، حيث يتيح لهم متابعة الإجراءات والتطورات المتعلقة بملفاتهم القانونية من خلال الوسائل الإلكترونية المعتمدة لدى المركز، بما في ذلك الاطلاع على مواعيد الجلسات، والمذكرات القانونية المقدمة، والوقوف على مستجدات الموقف القانوني أولًا بأول.
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="https://www.theformationscompany.com/wp-content/uploads/2019/06/AdobeStock_277630355-scaled.jpeg" class="img-fluid about-img" alt="عن المركز">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p class="mb-0">© 2026 جميع الحقوق محفوظة | المركز الدولي لأعمال المحاماة والتحكيم والتدريب</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
